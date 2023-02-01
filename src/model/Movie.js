@@ -11,4 +11,3 @@ export class Movie {
     this.isFavourite = isFavourite;
   }
 }
-
