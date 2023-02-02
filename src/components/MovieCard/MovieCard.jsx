@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 
 import { Movie } from "../../model/Movie";
-import { AiFillAlert } from "react-icons/ai";
+import {
+  AiFillAlert,
+  AiFillEdit,
+  AiOutlineDelete,
+  AiFillStar,
+} from "react-icons/ai";
 import styles from "./MovieCard.module.css";
 
 /**
@@ -18,9 +23,9 @@ export const MovieCard = ({ movieProp, editById, deleteById }) => {
   };
 
   return (
-    <div>
+    <li className={styles.movie}>
       <div>
-        <AiFillAlert
+        <AiFillStar
           onClick={toogleIsFavourite}
           className={`${styles.iconFavourite} ${
             movie.isFavourite ? styles.iconFavouriteActive : ""
@@ -32,12 +37,12 @@ export const MovieCard = ({ movieProp, editById, deleteById }) => {
         <h3>{movie.title}</h3>
         <p>{movie.year}</p>
         <div>
-          <AiFillAlert onClick={() => editById(movie.id)} />
+          <AiFillEdit onClick={() => editById(movie.id)} />
           {/*edit icon*/}
-          <AiFillAlert onClick={() => deleteById(movie.id)} />
+          <AiOutlineDelete onClick={() => deleteById(movie.id)} />
           {/*del icon*/}
         </div>
       </div>
-    </div>
+    </li>
   );
 };

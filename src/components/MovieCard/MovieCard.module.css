@@ -1,0 +1,21 @@
+.movie {
+    list-style: none;
+    background-color: blue;
+    /* background-image: url('https://movieprodportalstoweb.blob.core.windows.net/movieposters/antmanandthewaspquantumania.jpg'); */
+
+}
+.moviecard {
+    display: grid;
+    border-color: black;
+}
+
+.iconFavourite {
+    width: 30px;
+    height: 30px;
+    color: #fffffe63;
+}
+.iconFavouriteActive {
+    width: 30px;
+    height: 30px;
+    color: #fded08;
+}
