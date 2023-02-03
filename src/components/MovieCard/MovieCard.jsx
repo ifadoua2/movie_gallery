@@ -24,29 +24,30 @@ export const MovieCard = ({ movieProp, editById, deleteById }) => {
 
   return (
     <li className={styles.movie}>
-      <div>
-        <AiFillStar
-          onClick={toogleIsFavourite}
-          className={`${styles.iconFavourite} ${
-            movie.isFavourite ? styles.iconFavouriteActive : ""
-          }`}
-        />
+      <AiFillStar
+        onClick={toogleIsFavourite}
+        className={`${styles.iconFavourite} ${
+          movie.isFavourite ? styles.iconFavouriteActive : ""
+        }`}
+      />
+
+      <div className={styles.imageContainer}>
         <img
           className={styles.moviePosterImage}
-          src={
-            /* movie.img */ "https://m.media-amazon.com/images/M/MV5BNzU4NWEwNDItMzMzYy00ZDYyLWIxZjMtMDlkYWVjNjQwYzBjXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_FMjpg_UX1000_.jpg"
-          }
+          src={movie.img}
           alt="movie poster"
         />
       </div>
       <div className={styles.movieTitles}>
         <h3>{movie.title}</h3>
-        <p>{movie.year}</p>
-        <div>
-          <AiFillEdit onClick={() => editById(movie.id)} />
-          {/*edit icon*/}
-          <AiOutlineDelete onClick={() => deleteById(movie.id)} />
-          {/*del icon*/}
+        <div className={styles.movieTitlesIcons}>
+          <p>{movie.year}</p>
+          <div>
+            <AiFillEdit onClick={() => editById(movie.id)} />
+            {/*edit icon*/}
+            <AiOutlineDelete onClick={() => deleteById(movie.id)} />
+            {/*del icon*/}
+          </div>
         </div>
       </div>
     </li>

@@ -1,30 +1,30 @@
 .movie {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    list-style: none;
-    /* background-image: url('https://movieprodportalstoweb.blob.core.windows.net/movieposters/antmanandthewaspquantumania.jpg'); */
-    background: 
-    radial-gradient(black 15%, transparent 16%) 0 0,
-    radial-gradient(black 15%, transparent 16%) 8px 8px,
-    radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
-    radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
-    background-color:#282828;
-    background-size:16px 16px;
+    width: 250px;
+    position: relative;
 
+    list-style: none;
+   border-color: black;
 }
 
 .movieTitles{
-    display:grid;
-    grid-template-rows: 20px 20px 20px;
     background-color: #0F1822;
     color: beige;
+    text-align: left;
+    padding: 5px;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
 }
 
 .iconFavourite {
     width: 30px;
     height: 30px;
     color: #fffffe63;
+    position: absolute;
+    right: 0;
+    padding: 3px;
 }
 .iconFavouriteActive {
     width: 30px;
@@ -32,7 +32,16 @@
     color: #fdc408;
 }
 .moviePosterImage {
-    height: 300px;
-        width:auto;
+        width:100%;
         object-fit: cover;        
+}
+.imageContainer {
+    height: 370px;
+    width:100%;
+}
+
+.movieTitlesIcons{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5px;
 }

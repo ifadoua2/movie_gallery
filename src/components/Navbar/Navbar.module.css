@@ -1,0 +1,17 @@
+.NavbarContainer{
+    min-height: 200px;
+
+    display: flex;
+    background-color:  #0F1822;
+color: beige;
+justify-content:center;
+align-items:center;
+font-size: 30px;
+margin-bottom: 10px;
+
+
+}
+.logoWeb {
+    height: 120px;
+    object-fit: cover;
+}
