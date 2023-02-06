@@ -7,7 +7,7 @@ export const Navbar = () => {
   return (
     <div className={styles.NavbarContainer}>
       <img className={styles.logoWeb} src={logo} alt="logo" />
-      <h1>Movie Gallery</h1>
+      <h1 className={styles.nameWeb}>Movie Gallery</h1>
     </div>
   );
 };
