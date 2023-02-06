@@ -12,7 +12,7 @@ export const MovieList = () => {
 
   useEffect(() => {
     movieApiService.getAllMovies().then((data) => {
-      setIsLoading(false);
+      // setIsLoading(false);
       setMovies(data);
     });
   }, []);
@@ -24,7 +24,7 @@ export const MovieList = () => {
           className={styles.clipLoader}
           loading={isLoading}
           size={300}
-          color={red}
+          color={"red"}
           aria-label="Loading Spinner"
           data-testid="loader"
         />

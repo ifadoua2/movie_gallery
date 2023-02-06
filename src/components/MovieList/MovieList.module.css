@@ -1,15 +1,12 @@
 .gallery {
-    display:grid;
-    grid-auto-rows: auto;
-    gap: 20px;
-    grid-template-columns: repeat(auto-fill, 250px);
-    justify-content: center;
-    padding-top: 220px;
-        
-   
-
+  display: grid;
+  grid-auto-rows: auto;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, 250px);
+  justify-content: center;
+  padding-top: 220px;
 }
 .clipLoader {
-    
-    grid-auto-columns: auto;
+  justify-self: center;
+  grid-column: 1/-1;
 }
