@@ -1,23 +1,29 @@
-.NavbarContainer{
-    min-height: 200px;
+.NavbarContainer {
+  min-height: 200px;
 
-    display: flex;
-    background-color:  #0F1822;
-color: beige;
-justify-content:center;
-align-items:center;
-font-size: 30px;
-margin-bottom: 10px;
-position: fixed;
-top: 0px;
-left: 0px;
-z-index: 1;
-width: 100%;
-
-
-
+  display: flex;
+  background-color: #0f1822;
+  color: beige;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  margin-bottom: 10px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+  width: 100%;
 }
 .logoWeb {
-    height: 120px;
-    object-fit: cover;
+  height: 80px;
+  object-fit: cover;
+  padding: 20px;
+}
+
+.nameWeb {
+  text-decoration: none;
+}
+.nameWeb:visited {
+  text-decoration: none;
+  color: beige;
 }

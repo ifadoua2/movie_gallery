@@ -8,6 +8,8 @@ import {
   AiFillStar,
 } from "react-icons/ai";
 import styles from "./MovieCard.module.css";
+import { Link } from "react-router-dom";
+import movieApiService from "../../apiServices/movieApiService";
 
 /**
  *
@@ -20,6 +22,13 @@ export const MovieCard = ({ movieProp, editById, deleteById }) => {
   const toogleIsFavourite = () => {
     movie.isFavourite = !movie.isFavourite;
     setMovie({ ...movie });
+    movieApiService
+      .editMovieById(movie.id, {
+        isFavourite: movie.isFavourite,
+      })
+      .then((res) =>
+        console.log(`Movie: ${movie.id} se ha actualizado correctamente`)
+      );
   };
 
   return (
@@ -32,11 +41,13 @@ export const MovieCard = ({ movieProp, editById, deleteById }) => {
       />
 
       <div className={styles.imageContainer}>
-        <img
-          className={styles.moviePosterImage}
-          src={movie.img}
-          alt="movie poster"
-        />
+        <Link to={movie.id}>
+          <img
+            className={styles.moviePosterImage}
+            src={movie.img}
+            alt="movie poster"
+          />
+        </Link>
       </div>
       <div className={styles.movieTitles}>
         <h3>{movie.title}</h3>
