@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import movieApiService from "../../apiServices/movieApiService";
 import styles from "./MovieForm.module.css";
 
 const moviePlantilla = {
   img: "https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg",
-  title: "Película",
+  title: "default title",
   year: "",
   director: "",
   isFavourite: false,
@@ -21,9 +22,17 @@ function MovieForm() {
     console.log(newMovie);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    movieApiService.addMovie(newMovie);
+  };
+
+  //he cambiado value por defaultValue en todos los inputs
+  //he cambiado el name de todos los inputs para que coincidan con los elementos del objeto
+  //si se borra la url de la imagen del formulario desaparecen los inputs
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           <img
             className={styles.moviePoster}
@@ -33,42 +42,41 @@ function MovieForm() {
         </div>
         <section className={styles.movieForm}>
           <input
-            value={newMovie.title}
+            defaultValue={newMovie.title}
             onChange={handleOnChange}
-            name="movieTitle"
+            name="title"
             type="text"
             placeholder="Título de la película ..."
           />
-          {
-            /*         <input
-            value={newMovie.year}
+          <input
+            defaultValue={newMovie.year}
             onChange={handleOnChange}
-            name="movieYear"
+            name="year"
             type="text"
             placeholder="Año de estreno ..."
           />
           <input
-            value={newMovie.director}
+            defaultValue={newMovie.director}
             onChange={handleOnChange}
-            name="movieDirector"
+            name="director"
             type="text"
             placeholder="Director de la película ..."
           />
           <textarea
-            value={newMovie.sinopsis}
+            defaultValue={newMovie.sinopsis}
             onChange={handleOnChange}
-            name="movieSinopsis"
+            name="sinopsis"
             type="area"
             placeholder="De qué va ..."
-          />*/
-            <textarea
-              value={newMovie.img}
-              onChange={handleOnChange}
-              name="moviePoster"
-              type="area"
-              placeholder="url de la imagen ..."
-            />
-          }
+          />
+
+          <textarea
+            defaultValue={newMovie.img}
+            onChange={handleOnChange}
+            name="img"
+            type="area"
+            placeholder="url de la imagen ..."
+          />
           <button type="submit">Add</button>
         </section>
       </form>
