@@ -10,6 +10,7 @@ import {
 import styles from "./MovieCard.module.css";
 import { Link } from "react-router-dom";
 import movieApiService from "../../apiServices/movieApiService";
+import { AccordionSummary } from "@mui/material";
 
 /**
  *
@@ -53,10 +54,16 @@ export const MovieCard = ({ movieProp, editById, deleteById }) => {
         <h3>{movie.title}</h3>
         <div className={styles.movieTitlesIcons}>
           <p>{movie.year}</p>
-          <div>
-            <AiFillEdit onClick={() => editById(movie.id)} />
+          <div className={styles.icons}>
+            <AiFillEdit
+              className={styles.iconEdit}
+              onClick={() => editById(movie.id)}
+            />
             {/*edit icon*/}
-            <AiOutlineDelete onClick={() => deleteById(movie.id)} />
+            <AiOutlineDelete
+              className={styles.iconDelete}
+              onClick={() => deleteById(movie.id)}
+            />
             {/*del icon*/}
           </div>
         </div>

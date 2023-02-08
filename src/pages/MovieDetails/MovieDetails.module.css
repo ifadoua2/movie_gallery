@@ -3,7 +3,7 @@
   display: grid;
   width: 100vw;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  /* gap: 1rem; */
 }
 .contenedorImagen {
   position: relative;
@@ -29,6 +29,8 @@
 }
 
 .iconFavourite {
+  cursor: pointer;
+
   width: 48px;
   height: 48px;
   color: #a7a7a7;

@@ -15,6 +15,12 @@ export const MovieList = () => {
     });
   }, []);
 
+  const deleteById = (id) => {
+    movieApiService.deleteMovieById(id).then((data) => {
+      setMovies(movies.filter((movie) => movie.id != id));
+    });
+  };
+
   return (
     <div className={styles.gallery}>
       {isLoading ? (
@@ -29,7 +35,11 @@ export const MovieList = () => {
       ) : (
         <>
           {movies.map((movie) => (
-            <MovieCard movieProp={movie} key={movie.id} />
+            <MovieCard
+              movieProp={movie}
+              key={movie.id}
+              deleteById={deleteById}
+            />
           ))}
         </>
       )}

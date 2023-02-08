@@ -29,6 +29,8 @@
   right: 0;
   padding: 3px;
   z-index: 1;
+  cursor: pointer;
+
   background-image: radial-gradient(
     circle,
     rgba(0, 0, 0, 0.575),
@@ -56,4 +58,17 @@
   display: flex;
   justify-content: space-between;
   padding-top: 5px;
+
+}
+
+.iconDelete {
+
+  font-size: 20px;
+  color:rgb(233, 15, 59);
+  cursor: pointer;
+}
+
+.iconEdit {
+  font-size: 20px;
+  padding-right: 10px;
 }

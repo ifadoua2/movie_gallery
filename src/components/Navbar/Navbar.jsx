@@ -11,6 +11,9 @@ export const Navbar = () => {
       <Link to={"/"} className={styles.nameWeb}>
         <h1>Movie Gallery</h1>
       </Link>
+      <div>
+        <Link to={"/form"}>Add</Link>
+      </div>
     </div>
   );
 };
