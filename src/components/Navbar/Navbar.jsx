@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
+import Addlogo from "../../assets/images/logo.png";
 import styles from "./Navbar.module.css";
 //src\assets\images\logo.png
 
@@ -13,6 +14,7 @@ export const Navbar = () => {
       </Link>
       <div>
         <Link to={"/form"}>Add</Link>
+        <img className={styles.logoAdd} src={Addlogo} alt="logo add" />
       </div>
     </div>
   );
