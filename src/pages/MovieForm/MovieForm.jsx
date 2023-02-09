@@ -4,7 +4,7 @@ import styles from "./MovieForm.module.css";
 
 const moviePlantilla = {
   img: "https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg",
-  title: "default title",
+  title: "",
   year: "",
   director: "",
   isFavourite: false,
@@ -27,13 +27,11 @@ function MovieForm() {
     movieApiService.addMovie(newMovie);
   };
 
-  //he cambiado value por defaultValue en todos los inputs
   //he cambiado el name de todos los inputs para que coincidan con los elementos del objeto
-  //si se borra la url de la imagen del formulario desaparecen los inputs
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <div>
+    <div className={styles.pageContainer}>
+      <form className={styles.MovieFormContainer} onSubmit={handleSubmit}>
+        <div className={styles.contenedorImagen}>
           <img
             className={styles.moviePoster}
             src={newMovie.img}
@@ -41,37 +39,48 @@ function MovieForm() {
           />
         </div>
         <section className={styles.movieForm}>
+          <div className={styles.inputTitleYearContainer}>
+            <div>
+              <label>Título</label>
+              <input
+                value={newMovie.title}
+                onChange={handleOnChange}
+                name="title"
+                type="text"
+                placeholder="Título de la película ..."
+              />
+            </div>
+            <div>
+              <label>Año</label>
+              <input
+                value={newMovie.year}
+                onChange={handleOnChange}
+                name="year"
+                type="text"
+                placeholder="Año de estreno ..."
+              />
+            </div>
+          </div>
+          <label>Director</label>
           <input
-            defaultValue={newMovie.title}
-            onChange={handleOnChange}
-            name="title"
-            type="text"
-            placeholder="Título de la película ..."
-          />
-          <input
-            defaultValue={newMovie.year}
-            onChange={handleOnChange}
-            name="year"
-            type="text"
-            placeholder="Año de estreno ..."
-          />
-          <input
-            defaultValue={newMovie.director}
+            value={newMovie.director}
             onChange={handleOnChange}
             name="director"
             type="text"
             placeholder="Director de la película ..."
           />
+          <label>Sinopsis</label>
           <textarea
-            defaultValue={newMovie.sinopsis}
+            className={styles.inputSinopsis}
+            value={newMovie.sinopsis}
             onChange={handleOnChange}
             name="sinopsis"
             type="area"
             placeholder="De qué va ..."
           />
-
+          <label>Carátula</label>
           <textarea
-            defaultValue={newMovie.img}
+            value={newMovie.img}
             onChange={handleOnChange}
             name="img"
             type="area"

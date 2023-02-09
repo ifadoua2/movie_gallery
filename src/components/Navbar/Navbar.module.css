@@ -1,5 +1,5 @@
 .NavbarContainer {
-  min-height: 200px;
+  min-height: 180px;
 
   display: flex;
   background-color: #0f1822;
@@ -18,6 +18,9 @@
   height: 80px;
   object-fit: cover;
   padding: 20px;
+}
+.logoAdd {
+  height: 48px;
 }
 
 .nameWeb {
