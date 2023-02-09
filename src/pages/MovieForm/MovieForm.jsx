@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import movieApiService from "../../apiServices/movieApiService";
 import styles from "./MovieForm.module.css";
+import Addlogo from "../../assets/images/Addlogo.png";
+import { useNavigate } from "react-router-dom";
 
 const moviePlantilla = {
   img: "https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg",
@@ -13,6 +15,7 @@ const moviePlantilla = {
 
 function MovieForm() {
   const [newMovie, setNewMovie] = useState(moviePlantilla);
+  const navigator = useNavigate();
 
   const handleOnChange = (e) => {
     const name = e.target.name;
@@ -22,9 +25,10 @@ function MovieForm() {
     console.log(newMovie);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    movieApiService.addMovie(newMovie);
+    await movieApiService.addMovie(newMovie);
+    navigator("/");
   };
 
   //he cambiado el name de todos los inputs para que coincidan con los elementos del objeto
@@ -78,15 +82,27 @@ function MovieForm() {
             type="area"
             placeholder="De qué va ..."
           />
-          <label>Carátula</label>
-          <textarea
-            value={newMovie.img}
-            onChange={handleOnChange}
-            name="img"
-            type="area"
-            placeholder="url de la imagen ..."
-          />
-          <button type="submit">Add</button>
+
+          <div>
+            <label>Carátula</label>
+          </div>
+          <div className={styles.imgButtonContainer}>
+            <div className={styles.imgUrlContainer}>
+              <textarea
+                value={newMovie.img}
+                onChange={handleOnChange}
+                name="img"
+                type="area"
+                placeholder="url de la imagen ..."
+              />
+            </div>
+            <div>
+              {/* <button type="submit">Add</button> */}
+              <button className={styles.logoAddContainer} type="submit">
+                <img className={styles.logoAdd} src={Addlogo} alt="logo add" />
+              </button>
+            </div>
+          </div>
         </section>
       </form>
     </div>
