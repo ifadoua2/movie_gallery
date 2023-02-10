@@ -20,9 +20,9 @@ function MovieForm() {
   const handleOnChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    const temp = (newMovie[name] = value);
-    setNewMovie({ ...newMovie, temp });
-    console.log(newMovie);
+    newMovie[name] = value;
+    setNewMovie({ ...newMovie });
+    //console.log(newMovie);
   };
 
   const handleSubmit = async (e) => {
