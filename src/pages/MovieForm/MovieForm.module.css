@@ -1,0 +1,90 @@
+
+.pageContainer{
+    
+    width: 100%;
+    
+}
+.MovieFormContainer{
+    margin: auto;
+    padding-top: 220px;
+  display: flex;
+  max-width: 800px;
+  justify-content:space-between;
+  
+
+}
+
+.contenedorImagen {
+    margin-right: 50px;
+    padding: 0 20px;
+    height: 60vh;
+    
+  object-fit: cover;
+  border-radius: 20px;
+
+  }
+  .contenedorImagen img {
+    height: 60vh;
+    object-fit: cover;
+    border-radius: 20px;}
+  
+/* .moviePoster{
+    height: 60vh;
+  object-fit: cover;
+  border-radius: 20px;
+} */
+.movieForm {
+
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    flex-wrap: wrap;
+
+
+}
+.movieForm label {
+    display: block;
+    text-align: left;
+    padding-top: 10px;
+    color:  #0f1822;;
+}
+.movieForm input, textarea {
+    padding: 0.8rem;
+    /* size: 300px; */
+    height: 20px;
+    border-radius: 10px;
+    outline: none;
+    border: 0px;
+
+}
+.inputSinopsis {
+    height: 70px;
+}
+.inputTitleYearContainer {
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.imgButtonContainer {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap: wrap;
+
+}
+.imgUrlContainer{
+    width: 350px;
+}
+.imgUrlContainer textarea {
+    width: 340px;
+}
+
+.logoAddContainer{
+  border: none;
+    
+}
+.logoAdd {
+    height: 48px;
+    cursor: pointer;
+   
+  }

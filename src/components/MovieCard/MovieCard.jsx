@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 import { Movie } from "../../model/Movie";
-import { AiFillAlert } from "react-icons/ai";
+import {
+  AiFillAlert,
+  AiFillEdit,
+  AiOutlineDelete,
+  AiFillStar,
+} from "react-icons/ai";
 import styles from "./MovieCard.module.css";
+import { Link } from "react-router-dom";
+import movieApiService from "../../apiServices/movieApiService";
+import { AccordionSummary } from "@mui/material";
 
 /**
  *
@@ -15,29 +23,51 @@ export const MovieCard = ({ movieProp, editById, deleteById }) => {
   const toogleIsFavourite = () => {
     movie.isFavourite = !movie.isFavourite;
     setMovie({ ...movie });
+    movieApiService
+      .editMovieById(movie.id, {
+        isFavourite: movie.isFavourite,
+      })
+      .then((res) =>
+        console.log(`Movie: ${movie.id} se ha actualizado correctamente`)
+      );
   };
 
   return (
-    <div>
-      <div>
-        <AiFillAlert
-          onClick={toogleIsFavourite}
-          className={`${styles.iconFavourite} ${
-            movie.isFavourite ? styles.iconFavouriteActive : ""
-          }`}
-        />
-        <img src={movie.img} alt="movie poster" />
+    <li className={styles.movie}>
+      <AiFillStar
+        onClick={toogleIsFavourite}
+        className={`${styles.iconFavourite} ${
+          movie.isFavourite ? styles.iconFavouriteActive : ""
+        }`}
+      />
+
+      <div className={styles.imageContainer}>
+        <Link to={movie.id}>
+          <img
+            className={styles.moviePosterImage}
+            src={movie.img}
+            alt="movie poster"
+          />
+        </Link>
       </div>
-      <div>
+      <div className={styles.movieTitles}>
         <h3>{movie.title}</h3>
-        <p>{movie.year}</p>
-        <div>
-          <AiFillAlert onClick={() => editById(movie.id)} />
-          {/*edit icon*/}
-          <AiFillAlert onClick={() => deleteById(movie.id)} />
-          {/*del icon*/}
+        <div className={styles.movieTitlesIcons}>
+          <p>{movie.year}</p>
+          <div className={styles.icons}>
+            <AiFillEdit
+              className={styles.iconEdit}
+              onClick={() => editById(movie.id)}
+            />
+            {/*edit icon*/}
+            <AiOutlineDelete
+              className={styles.iconDelete}
+              onClick={() => deleteById(movie.id)}
+            />
+            {/*del icon*/}
+          </div>
         </div>
       </div>
-    </div>
+    </li>
   );
 };
