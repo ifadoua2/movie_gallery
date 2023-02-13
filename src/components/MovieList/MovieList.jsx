@@ -11,7 +11,7 @@ export const MovieList = () => {
   useEffect(() => {
     movieApiService.getAllMovies().then((data) => {
       setIsLoading(false);
-      setMovies(data);
+      setMovies(data.reverse());
     });
   }, []);
 
