@@ -64,10 +64,10 @@ export const MovieList = ({ isToastDeleteOpen, setIsToastDeleteOpen }) => {
         </>
       )}
 
-      <Snackbar
+    {/*   <Snackbar
         open={isToastDeleteOpen}
         autoHideDuration={10000}
-        anchorOrigin={{ vertical: "top", horizontal: "right" }}
+        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
         onClose={handleToastClose}
       >
         <Alert
@@ -77,7 +77,7 @@ export const MovieList = ({ isToastDeleteOpen, setIsToastDeleteOpen }) => {
         >
           Pelicula correctamente eliminada!
         </Alert>
-      </Snackbar>
+      </Snackbar> */}
     </div>
   );
 };
