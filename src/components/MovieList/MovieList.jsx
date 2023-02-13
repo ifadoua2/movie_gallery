@@ -4,11 +4,23 @@ import styles from "./MovieList.module.css";
 import movieApiService from "../../apiServices/movieApiService.js";
 import ClipLoader from "react-spinners/ClipLoader";
 
+//=============Imports para el TOAST===========================
+
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
+
+//=================Codigo UI ======================
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
 export const MovieList = () => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [filterVal, setFilterVal] = useState("");
   const [showMovies, setShowMovies] = useState([]);
+  const [isToastDeleteOpen, setIsToastDeleteOpen] = useState(false);
 
   useEffect(() => {
     movieApiService.getAllMovies().then((data) => {
@@ -22,6 +34,7 @@ export const MovieList = () => {
     movieApiService.deleteMovieById(id).then((data) => {
       setMovies(movies.filter((movie) => movie.id != id));
       setShowMovies([...movies]);
+      setIsToastDeleteOpen(true);
     });
   };
 
@@ -33,7 +46,13 @@ export const MovieList = () => {
       )
     );
   };
+  const handleToastClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
 
+    setIsToastDeleteOpen(false);
+  };
   return (
     <div className={styles.movieListContainer}>
       <label htmlFor="inputFilter">Filter</label>
@@ -66,6 +85,20 @@ export const MovieList = () => {
           </>
         )}
       </div>
+      <Snackbar
+        open={isToastDeleteOpen}
+        autoHideDuration={10000}
+        anchorOrigin={{ vertical: "top", horizontal: "right" }}
+        onClose={handleToastClose}
+      >
+        <Alert
+          onClose={handleToastClose}
+          severity="info"
+          sx={{ width: "100%" }}
+        >
+          Pelicula correctamente eliminada!
+        </Alert>
+      </Snackbar>
     </div>
   );
 };
