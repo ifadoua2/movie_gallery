@@ -15,9 +15,11 @@ const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
-export const MovieList = ({ isToastDeleteOpen, setIsToastDeleteOpen }) => {
+export const MovieList = () => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isToastDeleteOpen, setIsToastDeleteOpen] = useState(false);
+
 
   useEffect(() => {
     movieApiService.getAllMovies().then((data) => {
@@ -29,7 +31,7 @@ export const MovieList = ({ isToastDeleteOpen, setIsToastDeleteOpen }) => {
   const deleteById = (id) => {
     movieApiService.deleteMovieById(id).then((data) => {
       setMovies(movies.filter((movie) => movie.id !== id));
-      //activar toast
+      setIsToastDeleteOpen(true);
     });
   };
 
@@ -64,10 +66,10 @@ export const MovieList = ({ isToastDeleteOpen, setIsToastDeleteOpen }) => {
         </>
       )}
 
-    {/*   <Snackbar
+     <Snackbar
         open={isToastDeleteOpen}
         autoHideDuration={10000}
-        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+        anchorOrigin={{ vertical: "top", horizontal: "right" }}
         onClose={handleToastClose}
       >
         <Alert
@@ -77,7 +79,7 @@ export const MovieList = ({ isToastDeleteOpen, setIsToastDeleteOpen }) => {
         >
           Pelicula correctamente eliminada!
         </Alert>
-      </Snackbar> */}
+      </Snackbar>
     </div>
   );
 };
