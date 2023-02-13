@@ -4,7 +4,18 @@ import styles from "./MovieList.module.css";
 import movieApiService from "../../apiServices/movieApiService.js";
 import ClipLoader from "react-spinners/ClipLoader";
 
-export const MovieList = () => {
+//=============Imports para el TOAST===========================
+
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
+
+//=================Codigo UI ======================
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
+export const MovieList = ({ isToastDeleteOpen, setIsToastDeleteOpen }) => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -17,8 +28,17 @@ export const MovieList = () => {
 
   const deleteById = (id) => {
     movieApiService.deleteMovieById(id).then((data) => {
-      setMovies(movies.filter((movie) => movie.id != id));
+      setMovies(movies.filter((movie) => movie.id !== id));
+      //activar toast
     });
+  };
+
+  const handleToastClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setIsToastDeleteOpen(false);
   };
 
   return (
@@ -43,6 +63,21 @@ export const MovieList = () => {
           ))}
         </>
       )}
+
+      <Snackbar
+        open={isToastDeleteOpen}
+        autoHideDuration={10000}
+        anchorOrigin={{ vertical: "top", horizontal: "right" }}
+        onClose={handleToastClose}
+      >
+        <Alert
+          onClose={handleToastClose}
+          severity="info"
+          sx={{ width: "100%" }}
+        >
+          Pelicula correctamente eliminada!
+        </Alert>
+      </Snackbar>
     </div>
   );
 };
