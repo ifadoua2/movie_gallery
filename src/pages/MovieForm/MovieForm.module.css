@@ -6,11 +6,11 @@
 }
 .MovieFormContainer{
     margin: auto;
-    padding-top: 220px;
+    padding-top: 140px;
   display: flex;
   max-width: 800px;
   justify-content:space-between;
-  
+  /* flex-wrap: wrap; */
 
 }
 
@@ -87,4 +87,9 @@
     height: 48px;
     cursor: pointer;
    
+  }
+  @media (width<400px) {
+    .MovieFormContainer{
+        flex-wrap: wrap;
+    }
   }
