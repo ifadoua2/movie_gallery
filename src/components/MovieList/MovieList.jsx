@@ -3,6 +3,7 @@ import { MovieCard } from "../MovieCard/MovieCard";
 import styles from "./MovieList.module.css";
 import movieApiService from "../../apiServices/movieApiService.js";
 import ClipLoader from "react-spinners/ClipLoader";
+import { AiFillStar } from "react-icons/ai";
 
 //=============Imports para el TOAST===========================
 
@@ -21,6 +22,7 @@ export const MovieList = () => {
   const [filterVal, setFilterVal] = useState("");
   const [showMovies, setShowMovies] = useState([]);
   const [isToastDeleteOpen, setIsToastDeleteOpen] = useState(false);
+  const [favMode, setFavMode] = useState(false);
 
   useEffect(() => {
     movieApiService.getAllMovies().then((data) => {
@@ -46,6 +48,11 @@ export const MovieList = () => {
       )
     );
   };
+  const handleFilterFavClick = (e) => {
+    setFavMode(!favMode);
+    if (favMode) setShowMovies(showMovies.filter((movie) => movie.isFavourite));
+    else setShowMovies(movies);
+  };
   const handleToastClose = (event, reason) => {
     if (reason === "clickaway") {
       return;
@@ -62,6 +69,12 @@ export const MovieList = () => {
         onChange={handleFilterChange}
         value={filterVal}
         id="inputFilter"
+      />
+      <AiFillStar
+        onClick={handleFilterFavClick}
+        className={`${styles.filterFavIcon} ${
+          favMode ? styles.filterFavIconActive : ""
+        }`}
       />
       <div className={styles.gallery}>
         {isLoading ? (
