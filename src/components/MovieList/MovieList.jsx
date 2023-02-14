@@ -47,6 +47,9 @@ export const MovieList = () => {
         movie.title.toUpperCase().includes(e.target.value.toUpperCase())
       )
     );
+    if (favMode) setShowMovies(showMovies.filter((movie) => movie.isFavourite));
+    /*TODO en modo favoritos el filtro muestra TODAS las películas, no solo las favoritas. Por algún motivo 'favMode' cambia a 'false' */
+    /* TODO en modo filtrado de favoritos cuando se desmarca un favorito la película continua mostrada */
   };
   const handleFilterFavClick = (e) => {
     setFavMode(!favMode);
