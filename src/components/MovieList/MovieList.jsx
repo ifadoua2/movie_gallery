@@ -14,7 +14,7 @@ export const MovieList = () => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [openConfirmDialog, setOpenConfirmDialog] = useState(false);
-  //const [optionConfirm, setOptionConfirm] = useState(false);
+  const [optionConfirm, setOptionConfirm] = useState(false);
   useEffect(() => {
     movieApiService.getAllMovies().then((data) => {
       setIsLoading(false);
@@ -31,7 +31,7 @@ export const MovieList = () => {
 
   const handleDialogClose = (option) => {
     if (option === "YES") {
-      //setOptionConfirm();
+      setOptionConfirm(true);
     }
   };
 
