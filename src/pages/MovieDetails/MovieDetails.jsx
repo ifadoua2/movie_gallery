@@ -30,7 +30,7 @@ export const MovieDetails = () => {
   }, []);
 
   return (
-    <div>
+    <div className={styles.mainContainer}>
       {isLoading ? (
         <ClipLoader
           className={styles.clipLoader}
