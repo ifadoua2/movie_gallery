@@ -17,7 +17,7 @@ import { AccordionSummary } from "@mui/material";
  * @param {*} param0
  * @returns
  */
-export const MovieCard = ({ movieProp, editById, deleteById }) => {
+export const MovieCard = ({ movieProp, editById, openConfirmDialog }) => {
   const [movie, setMovie] = useState(movieProp);
 
   const toogleIsFavourite = () => {
@@ -62,7 +62,7 @@ export const MovieCard = ({ movieProp, editById, deleteById }) => {
             {/*edit icon*/}
             <AiOutlineDelete
               className={styles.iconDelete}
-              onClick={() => deleteById(movie.id)}
+              onClick={() => openConfirmDialog(movie.id)}
             />
             {/*del icon*/}
           </div>

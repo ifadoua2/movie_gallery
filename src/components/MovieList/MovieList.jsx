@@ -13,8 +13,9 @@ import Button from "@mui/material/Button";
 export const MovieList = () => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [openConfirmDialog, setOpenConfirmDialog] = useState(false);
-  const [optionConfirm, setOptionConfirm] = useState(false);
+  const [isConfirmDialogOpen, setIsConfirmDialogOpen] = useState(false);
+  const [idToDelete, setIdToDelete] = useState("");
+
   useEffect(() => {
     movieApiService.getAllMovies().then((data) => {
       setIsLoading(false);
@@ -23,16 +24,22 @@ export const MovieList = () => {
   }, []);
 
   const deleteById = (id) => {
-    setOpenConfirmDialog(true);
     movieApiService.deleteMovieById(id).then((data) => {
-      setMovies(movies.filter((movie) => movie.id != id));
+      setMovies(movies.filter((movie) => movie.id !== id));
     });
+  };
+  const openConfirmDialog = (id) => {
+    setIsConfirmDialogOpen(true);
+    setIdToDelete(id);
   };
 
   const handleDialogClose = (option) => {
+    if (option !== "YES" && option !== "NO") return;
     if (option === "YES") {
-      setOptionConfirm(true);
+      deleteById(idToDelete);
+      setIdToDelete("");
     }
+    setIsConfirmDialogOpen(false);
   };
 
   return (
@@ -52,13 +59,13 @@ export const MovieList = () => {
             <MovieCard
               movieProp={movie}
               key={movie.id}
-              deleteById={deleteById}
+              openConfirmDialog={openConfirmDialog}
             />
           ))}
         </>
       )}
       <Dialog
-        open={openConfirmDialog}
+        open={isConfirmDialogOpen}
         onClose={handleDialogClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
@@ -68,14 +75,15 @@ export const MovieList = () => {
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            This acction will defenitly remove the movie.
+            This action will defenitely remove the movie. Do you want to
+            continue?
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleDialogClose}>NO</Button>
-          <Button onClick={handleDialogClose} autoFocus>
-            YES
+          <Button onClick={() => handleDialogClose("NO")} autoFocus>
+            NO
           </Button>
+          <Button onClick={() => handleDialogClose("YES")}>YES</Button>
         </DialogActions>
       </Dialog>
     </div>
