@@ -7,3 +7,5 @@ test("renders movie gallery title in child navbar", () => {
   const linkElement = screen.getByText(/movie gallery/i);
   expect(linkElement).toBeInTheDocument();
 });
+
+
