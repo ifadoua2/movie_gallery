@@ -1,16 +1,9 @@
 import React, { useState } from "react";
 
-import { Movie } from "../../model/Movie";
-import {
-  AiFillAlert,
-  AiFillEdit,
-  AiOutlineDelete,
-  AiFillStar,
-} from "react-icons/ai";
+import { AiFillEdit, AiOutlineDelete, AiFillStar } from "react-icons/ai";
 import styles from "./MovieCard.module.css";
 import { Link } from "react-router-dom";
 import movieApiService from "../../apiServices/movieApiService";
-import { AccordionSummary } from "@mui/material";
 
 /**
  *
