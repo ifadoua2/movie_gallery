@@ -5,6 +5,6 @@ test("when clicked on the rendered button it executes the handleClickFunction on
   const handleBtnClick = jest.fn();
   render(<SimpleMiniComponentForTesting handleBtnClick={handleBtnClick} />);
   fireEvent.click(screen.getByText(/Test me!/i))
-  expect(handleBtnClick).toHaveBeenCalledTimes(1);
   expect(handleBtnClick).toHaveBeenCalled();
+  expect(handleBtnClick).toHaveBeenCalledTimes(1);
 });
