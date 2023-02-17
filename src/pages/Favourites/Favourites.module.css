@@ -1,0 +1,31 @@
+.gallery {
+    display: grid;
+    grid-auto-rows: auto;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, 250px);
+    justify-content: center;
+    padding-top: 20px;
+  }
+  .clipLoader {
+    justify-self: center;
+    grid-column: 1/-1;
+  }
+  
+  .movieListContainer {
+    padding-top: 220px;
+  }
+  
+  .inputFilter {
+    padding: 0.8rem;
+    height: 20px;
+    border-radius: 10px;
+    outline: none;
+    border: 0px;
+  }
+  
+  .filterFavIconActive{
+    cursor: pointer;
+    font-size: 48px;
+    color: #fdc408;
+  }
+  
