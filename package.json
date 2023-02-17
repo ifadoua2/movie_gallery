@@ -22,7 +22,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test-bck": "react-scripts test",
-    "test-funcionaEnWindows": "react-scripts test --transformIgnorePatterns \\node_modules/(?!ui-core)/\" --env=jsdom",
+    "test-funcionaEnWinFallaEnUbu": "react-scripts test --transformIgnorePatterns \"node_modules/(?!ui-core)/\" --env=jsdom",
     "test": "react-scripts test --transformIgnorePatterns --env=jsdom",
     "eject": "react-scripts eject"
   },
