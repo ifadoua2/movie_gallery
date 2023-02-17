@@ -48,6 +48,10 @@
   align-items: center;
   gap: 10px;
 }
+.mainContainer{
+  padding-top:140px;
+
+}
 
 @media (width>700px) {
   .detailsContainer {

@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { MovieCard } from "../MovieCard/MovieCard";
-import styles from "./MovieList.module.css";
+import styles from "./Favourites.module.css";
 import movieApiService from "../../apiServices/movieApiService.js";
 import ClipLoader from "react-spinners/ClipLoader";
 import { AiFillStar } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
+import { MovieCard } from "../../components/MovieCard/MovieCard";
 
 //=============Imports para el TOAST===========================
 
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
-import { useNavigate } from "react-router";
 
 //=================Codigo UI ======================
 
@@ -17,7 +17,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
-export const MovieList = () => {
+export const Favourites = () => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [filterVal, setFilterVal] = useState("");
@@ -30,7 +30,7 @@ export const MovieList = () => {
   }, []);
 
   const getMoviesState = () => {
-    movieApiService.getAllMovies().then((data) => {
+    movieApiService.getAllFavourites().then((data) => {
       setIsLoading(false);
       setMovies(data.reverse());
       setShowMovies([...data]);
@@ -53,9 +53,11 @@ export const MovieList = () => {
       )
     );
   };
+
   const handleFilterFavClick = (e) => {
-    navigator("/fav");
+    navigator("/");
   };
+
   const handleToastClose = (event, reason) => {
     if (reason === "clickaway") {
       return;
@@ -75,7 +77,7 @@ export const MovieList = () => {
       />
       <AiFillStar
         onClick={handleFilterFavClick}
-        className={`${styles.filterFavIcon}`}
+        className={`${styles.filterFavIconActive}`}
       />
       <div className={styles.gallery}>
         {isLoading ? (
