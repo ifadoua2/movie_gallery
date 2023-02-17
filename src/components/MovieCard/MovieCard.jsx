@@ -17,7 +17,12 @@ import { AccordionSummary } from "@mui/material";
  * @param {*} param0
  * @returns
  */
-export const MovieCard = ({ movieProp, editById, deleteById }) => {
+export const MovieCard = ({
+  movieProp,
+  editById,
+  deleteById,
+  getMoviesState,
+}) => {
   const [movie, setMovie] = useState(movieProp);
 
   const toogleIsFavourite = () => {
@@ -27,9 +32,7 @@ export const MovieCard = ({ movieProp, editById, deleteById }) => {
       .editMovieById(movie.id, {
         isFavourite: movie.isFavourite,
       })
-      .then((res) =>
-        console.log(`Movie: ${movie.id} se ha actualizado correctamente`)
-      );
+      .then((res) => getMoviesState());
   };
 
   return (
