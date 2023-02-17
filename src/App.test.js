@@ -4,8 +4,8 @@ import App from "./App";
 
 test("renders movie gallery title in child navbar", () => {
   render(<BrowserRouter><App /></BrowserRouter>);
-  const linkElement = screen.getByText(/movie gallery/i);
-  expect(linkElement).toBeInTheDocument();
+  const headerElement = screen.getByText(/movie gallery/i);
+  expect(headerElement).toBeInTheDocument();
 });
 
 
