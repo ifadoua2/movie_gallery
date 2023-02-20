@@ -61,4 +61,4 @@ También hemos hablado de la UI y nos deja espacio para proponer ideas pero nos 
 > Quiero un botón en el menú
 > para poder ir a una galería de mis imágenes favoritas
 
-![Trello](./imgReadme/trello.png)
+![Trello](./imgReadme/trello-sprintfinal.jpg)
