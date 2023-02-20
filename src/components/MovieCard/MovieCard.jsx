@@ -1,16 +1,6 @@
 import React, { useState } from "react";
-<<<<<<< HEAD
-import { Movie } from "../../model/Movie";
-import {
-  AiFillAlert,
-  AiFillEdit,
-  AiOutlineDelete,
-  AiFillStar,
-} from "react-icons/ai";
-=======
 
 import { AiFillEdit, AiOutlineDelete, AiFillStar } from "react-icons/ai";
->>>>>>> dev
 import styles from "./MovieCard.module.css";
 import { Link } from "react-router-dom";
 import movieApiService from "../../apiServices/movieApiService";
