@@ -78,7 +78,10 @@ Las películas se muestran en formato 'card' incorporando:
 
 Las películas se muestran en orden descendente según su incorporación para mostrar primero las más recientes.
 
-Se ha desarrollado un Navbar común para todas las páginas con:
+Se ha desarrollado un Navbar común para todas las páginas
+
+![Navbar](./imgReadme/Navbar.png)
+con:
 
 - 'logo'
 - 'nombre de la web' con enlace a la 'home'
@@ -90,6 +93,8 @@ En la página de inicio se han incorporado elementos de filtrado:
 - Icono favorito que muestra únicamente aquellas películas que incorporen la 'marca' favorita.
 
 ### Añadir película
+
+![Add](./imgReadme/Add_Icon.png)
 
 Al pulsar sobre la imagen de añadir se redirige a una nueva página con un formulario.
 La página contiene:
@@ -120,6 +125,8 @@ También desde la misma página se puede acceder pulsando sobre el icono 'estrel
 Cada ficha o 'card' de película incorpora el icono de eliminar película.
 
 Al pulsar sobre el icono se muestra un mensaje que solicita la confirmación del borrado.
+
+![confirDialog](./imgReadme/confirDialog.png)
 
 Si se confirma el borrado el sistema muestra mensaje de confirmación (Toast).
 
