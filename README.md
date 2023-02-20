@@ -134,5 +134,5 @@ Si se confirma el borrado el sistema muestra mensaje de confirmación (Toast).
 
 - Funcionalidad editar
 - Iconos de ampliar información en Imdb y FilmAffinity
--
+- Añadir Global CSS (paleta, fuentes)
 -
