@@ -1,26 +1,20 @@
 import React, { useState } from "react";
 
-import { Movie } from "../../model/Movie";
-import {
-  AiFillAlert,
-  AiFillEdit,
-  AiOutlineDelete,
-  AiFillStar,
-} from "react-icons/ai";
+import { AiFillEdit, AiOutlineDelete, AiFillStar } from "react-icons/ai";
 import styles from "./MovieCard.module.css";
 import { Link } from "react-router-dom";
 import movieApiService from "../../apiServices/movieApiService";
-import { AccordionSummary } from "@mui/material";
 
 /**
  *
  * @param {*} param0
  * @returns
  */
+
 export const MovieCard = ({
   movieProp,
   editById,
-  deleteById,
+  openConfirmDialog,
   getMoviesState,
 }) => {
   const [movie, setMovie] = useState(movieProp);
@@ -65,7 +59,7 @@ export const MovieCard = ({
             {/*edit icon*/}
             <AiOutlineDelete
               className={styles.iconDelete}
-              onClick={() => deleteById(movie.id)}
+              onClick={() => openConfirmDialog(movie.id)}
             />
             {/*del icon*/}
           </div>
