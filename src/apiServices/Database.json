@@ -1,0 +1,144 @@
+[
+    {
+        "title": "Ant-Man And The Wasp: Quantumania",
+        "year": "2023",
+        "director": "Peyton Reed",
+        "img": "https://movieprodportalstoweb.blob.core.windows.net/movieposters/antmanandthewaspquantumania.jpg",
+        "sinopsis": "Scott Lang y Hope Van Dyne, junto con Hank Pym y Janet Van Dyne, exploran el Reino Cuántico, donde interactúan con extrañas criaturas y se embarcan en una aventura que va más allá de los límites de lo que creían posible.",
+        "isFavourite": true,
+        "urlImdb": "urlImdb 1",
+        "id": "1"
+    },
+    {
+        "title": "TResident Evil: bienvenidos a Raccoon City",
+        "year": "2021",
+        "director": "Johannes Roberts",
+        "img": "https://as01.epimg.net/meristation/imagenes/2021/11/04/noticias/1636051961_055653_1636052272_sumario_normal.jpg",
+        "sinopsis": "Los supervivientes intentan descubrir la verdad detrás de la malvada Umbrella Corporation. Mientras, luchan contra zombis sedientos de sangre en los páramos de Raccoon City.",
+        "isFavourite": false,
+        "urlImdb": "urlImdb 1",
+        "id": "2",
+        "isFavorite": true
+    },
+    {
+        "title": "The Unholy",
+        "year": "2021",
+        "director": "Evan Spiliotopoulos",
+        "img": "https://www.ecured.cu/images/thumb/d/d1/Imagafasfasfsaes.jpg/260px-Imagafasfasfsaes.jpg",
+        "sinopsis": "Un periodista con poca suerte descubre una serie de milagros en un pueblo de Nueva Inglaterra. Después de investigar los acontecimientos con el objetivo de volver al estrellado descubre que el pueblo esconde algo muy oscuro.",
+        "isFavourite": false,
+        "urlImdb": "urlImdb",
+        "id": "3",
+        "isFavorite": true
+    },
+    {
+        "title": "Uncharted",
+        "year": "2022",
+        "director": "Ruben Fleischer ",
+        "img": "https://assets-prd.ignimgs.com/2022/01/13/uncharted-poster-full-1642086040683.jpg",
+        "sinopsis": "Nathan Drake y su compañero Victor Sullivan se adentran en la peligrosa búsqueda del `mayor tesoro jamás encontrado`. Al mismo tiempo, rastrean pistas que puedan conducir al hermano perdido de Drake.",
+        "isFavourite": true,
+        "urlImdb": "urlImdb",
+        "id": "4"
+    },
+    {
+        "title": "Thor: Love and Thunder ",
+        "year": "2022",
+        "director": "Taika Waititi,",
+        "img": "https://i.etsystatic.com/37166133/r/il/0f5b32/4226342298/il_fullxfull.4226342298_t0py.jpg",
+        "sinopsis": "El Dios del Trueno (Chris Hemsworth) emprende un viaje que no se parece en nada a lo que se ha enfrentado hasta ahora: una búsqueda de la paz interior. Pero el retiro de Thor se ve interrumpido por un asesino galáctico conocido como Gorr el Carnicero de Dioses (Christian Bale), que busca la extinción de los dioses. Para hacer frente a la amenaza, Thor solicita la ayuda del Rey Valkiria (Tessa Thompson), de Korg (Taika Waititi) y de su ex novia Jane Foster (Natalie Portman) que, para sorpresa de Thor, empuña inexplicablemente su martillo mágico, Mjolnir, como la Poderosa Thor. Juntos, se embarcan en una aventura cósmica en la que tendrán que descubrir el misterio de la venganza del Carnicero de Dioses y detenerlo antes de que sea demasiado tarde.",
+        "isFavourite": false,
+        "urlImdb": "urlImdb",
+        "id": "5"
+    },
+    {
+        "title": "Spider-Man: No Way Home",
+        "year": "2022",
+        "director": "Jon Watts",
+        "img": "https://www.ecartelera.com/carteles/15800/15882/005_m.jpg",
+        "sinopsis": "Por primera vez en la historia cinematográfica de Spider-Man, nuestro héroe, vecino y amigo es desenmascarado y por tanto ya no es capaz de separar su vida normal de los enormes riesgos que conlleva ser un Súper Héroe. Cuando pide ayuda a Doctor Strange, los riesgos pasan a ser aún más peligrosos, obligándole a descubrir lo que realmente significa ser Spider-Man.",
+        "isFavourite": false,
+        "urlImdb": "urlImdb",
+        "id": "6"
+    },
+    {
+        "title": "Astérix y Obélix y el reino medio ",
+        "year": "2023",
+        "director": "Guillaume Canet",
+        "img": "https://cd1.taquilla.com/data/images/t/0c/asterix-y-obelix-el-reino-medio__205x292.jpg",
+        "sinopsis": "La princesa china pide ayuda a Astérix y Obélix tras el golpe de estado del malévolo príncipe Deng Qin, que derrocó a la emperatriz. La reputación de los galos acérrimos es conocida hasta en Shangai.",
+        "isFavourite": false,
+        "urlImdb": "urlImdb",
+        "id": "7"
+    },
+    {
+        "title": "Avatar: The Way of Water",
+        "year": "2022",
+        "director": " James Cameron",
+        "img": "https://vaguadacines.reservaentradas.com/vaguadacines/obj/LCinesD_dat/eventos/JPG000r7.jpg",
+        "sinopsis": "Jake Sully y Ney'tiri han formado una familia y hacen todo lo posible por permanecer juntos. Sin embargo, deben abandonar su hogar y explorar las regiones de Pandora cuando una antigua amenaza reaparece.",
+        "isFavourite": false,
+        "urlImdb": "urlImdb",
+        "id": "8"
+    },
+    {
+        "title": "The Batman",
+        "year": "2022",
+        "director": "Matt Reeves",
+        "img": "https://m.media-amazon.com/images/M/MV5BMDdmMTBiNTYtMDIzNi00NGVlLWIzMDYtZTk3MTQ3NGQxZGEwXkEyXkFqcGdeQXVyMzMwOTU5MDk@._V1_FMjpg_UX1000_.jpg",
+        "sinopsis": "En su segundo año luchando contra el crimen, Batman explora la corrupción existente en la ciudad de Gotham y el vínculo de esta con su propia familia. Además, entrará en conflicto con un asesino en serie conocido como `el Acertijo`",
+        "isFavourite": false,
+        "urlImdb": "urlImdb",
+        "id": "9"
+    },
+    {
+        "title": "Cruella",
+        "year": "2021",
+        "director": "Craig Gillespie",
+        "img": "https://m.media-amazon.com/images/M/MV5BOWI5YTUxOWEtZmRiZS00ZmQxLWE2NzctYTRiODA2NzE1ZjczXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg",
+        "sinopsis": "Decidida a convertirse en una exitosa diseñadora de moda, una joven y creativa estafadora llamada Estella se asocia con un par de ladrones para sobrevivir en las calles de Londres. Sin embargo, cuando su talento para la moda llama la atención de la legendaria diseñadora, la Baronesa von Hellman, Estella cambia el rumbo de su vida hasta que una serie de acontecimientos la llevan a asumir su lado malvado y a convertirse en la estridente y vengativa Cruella.",
+        "isFavourite": false,
+        "urlImdb": "urlImdb",
+        "id": "10"
+    },
+    {
+        "title": "Eternals",
+        "year": "2021",
+        "director": "Chloé Zhao",
+        "img": "https://www.ecartelera.com/carteles/15200/15259/004_m.jpg",
+        "sinopsis": "Los Eternos son una raza de seres inmortales con poderes sobrehumanos que han vivido en secreto en la Tierra durante miles de años. Aunque nunca han intervenido, ahora una amenaza se cierne sobre la humanidad.",
+        "isFavourite": false,
+        "urlImdb": "urlImdb",
+        "id": "11"
+    },
+    {
+        "title": "Free Guy",
+        "year": "2021",
+        "director": "Shawn Levy",
+        "img": "https://www.themoviedb.org/t/p/original/xmbU4JTUm8rsdtn7Y3Fcm30GpeT.jpg",
+        "sinopsis": "Un cajero de un banco descubre que en realidad es un personaje sin papel dentro de un brutal videojuego de mundo interactivo.",
+        "isFavourite": true,
+        "urlImdb": "urlImdb",
+        "id": "12"
+    },
+    {
+        "title": "El último duelo",
+        "year": "2021",
+        "director": " Ridley Scott.",
+        "img": "https://es.web.img2.acsta.net/pictures/21/10/28/11/35/0036055.jpg",
+        "sinopsis": "Historia del duelo entre Jean de Carrouges y Jacques Le Gris, dos amigos que se convirtieron en rivales. Cuando la mujer de Carrouges, es acosada por Le Gris, algo que él niega, ella no se queda callada y lo acusa. El consiguiente duelo a muerte determina el destino de los tres.",
+        "isFavourite": false,
+        "urlImdb": "urlImdb",
+        "id": "13"
+    },
+    {
+        "title": "Los hombres que miraban fijamente a las cabras",
+        "year": "2009",
+        "director": "Grant Heslov",
+        "img": "https://i.pinimg.com/originals/a2/b3/a0/a2b3a0050572e6cd71506f4a29db1e6d.jpg",
+        "sinopsis": "Un reportero en Irak puede tener la historia de su vida cuando conoce a Lyn Cassady, un tipo que dice ser un ex miembro del Ejército de la Nueva Tierra, una unidad que emplea poderes paranormales en sus misiones.",
+        "isFavourite": false,
+        "urlImdb": "urlImdb 16",
+        "id": "14"
+    }
+]

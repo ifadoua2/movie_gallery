@@ -11,6 +11,15 @@ import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 import { useNavigate } from "react-router";
 
+//=============Imports para el dialog===========================
+
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
+import Button from "@mui/material/Button";
+
 //=================Codigo UI ======================
 
 const Alert = React.forwardRef(function Alert(props, ref) {
@@ -20,10 +29,14 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 export const MovieList = () => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
   const [filterVal, setFilterVal] = useState("");
   const [showMovies, setShowMovies] = useState([]);
   const [isToastDeleteOpen, setIsToastDeleteOpen] = useState(false);
   const navigator = useNavigate();
+
+  const [openConfirmDialog, setOpenConfirmDialog] = useState(false);
+  const [optionConfirm, setOptionConfirm] = useState(false);
 
   useEffect(() => {
     getMoviesState();
@@ -38,6 +51,7 @@ export const MovieList = () => {
   };
 
   const deleteById = (id) => {
+    setOpenConfirmDialog(true);
     movieApiService.deleteMovieById(id).then((data) => {
       setMovies(movies.filter((movie) => movie.id != id));
       setShowMovies([...movies]);
@@ -63,6 +77,12 @@ export const MovieList = () => {
 
     setIsToastDeleteOpen(false);
   };
+  const handleDialogClose = (option) => {
+    if (option === "YES") {
+      setOptionConfirm(true);
+    }
+  };
+
   return (
     <div className={styles.movieListContainer}>
       <label htmlFor="inputFilter">Filter</label>
@@ -114,6 +134,27 @@ export const MovieList = () => {
           Pelicula correctamente eliminada!
         </Alert>
       </Snackbar>
+      <Dialog
+        open={openConfirmDialog}
+        onClose={handleDialogClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+          {"Are you sure you want to delete this movie?"}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            This acction will defenitly remove the movie.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleDialogClose}>NO</Button>
+          <Button onClick={handleDialogClose} autoFocus>
+            YES
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 };
