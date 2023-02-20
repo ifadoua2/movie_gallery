@@ -62,3 +62,70 @@ También hemos hablado de la UI y nos deja espacio para proponer ideas pero nos 
 > para poder ir a una galería de mis imágenes favoritas
 
 ![Trello](./imgReadme/trello-sprintfinal.jpg)
+
+## Funcionalidades implementadas
+
+Hemos desarrollado página de inicio o 'Home' desde la que se visualiza toda la galería de películas.
+
+Las películas se muestran en formato 'card' incorporando:
+
+- Carátula de la película
+- Título de la película
+- Año de estreno
+- Icono de edición
+- Icono de borrado
+- Icono de favorito
+
+Las películas se muestran en orden descendente según su incorporación para mostrar primero las más recientes.
+
+Se ha desarrollado un Navbar común para todas las páginas con:
+
+- 'logo'
+- 'nombre de la web' con enlace a la 'home'
+- imagen con la funcionalidad de 'añadir' nuevas películas.
+
+En la página de inicio se han incorporado elementos de filtrado:
+
+- Campo de texto que filtra coincidencias
+- Icono favorito que muestra únicamente aquellas películas que incorporen la 'marca' favorita.
+
+### Añadir película
+
+Al pulsar sobre la imagen de añadir se redirige a una nueva página con un formulario.
+La página contiene:
+
+- campo de previsualización de la carátula
+- campo de Título
+- campo de Año
+- campo de Director
+- campo de Sinopsis
+- campo de url de imagen de carátula
+- imagen (botón) de 'Añadir'
+
+Los campos son de texto plano y admiten cualquier carácter.
+Los campos están acompañados de etiquetas descriptivas.
+
+La imagen de 'Añadir' ejecuta una función que añade a la base de datos toda la información contenida en los campos y nos retorna a la página inicial.
+
+### Favoritos
+
+Desde la página inicial se puede marcar o desmarcar cualquier película como favorita pulsando sobre el icono 'estrella' que incorporan todas las fichas.
+
+El icono cambia de color para mostrarnos si es favorita o no.
+
+También desde la misma página se puede acceder pulsando sobre el icono 'estrella', junto al campo de filtrado, a una nueva página que muestre solo las películas que tenemos seleccionadas como favoritas.
+
+### Borrar
+
+Cada ficha o 'card' de película incorpora el icono de eliminar película.
+
+Al pulsar sobre el icono se muestra un mensaje que solicita la confirmación del borrado.
+
+Si se confirma el borrado el sistema muestra mensaje de confirmación (Toast).
+
+## Funcionalidades pendientes
+
+- Funcionalidad editar
+- Iconos de ampliar información en Imdb y FilmAffinity
+-
+-
