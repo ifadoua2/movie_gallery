@@ -2,6 +2,7 @@
   min-height: 120px;
 
   display: flex;
+  flex-wrap: wrap;
   background-color: #0f1822;
   color: beige;
   justify-content: center;
@@ -13,11 +14,12 @@
   left: 0px;
   z-index: 2;
   width: 100%;
+  gap:20px;
 }
 .logoWeb {
   height: 80px;
   object-fit: cover;
-  padding: 20px;
+  
 }
 .logoAdd {
   height: 48px;
@@ -30,3 +32,4 @@
   text-decoration: none;
   color: beige;
 }
+

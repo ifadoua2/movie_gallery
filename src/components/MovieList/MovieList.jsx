@@ -129,18 +129,20 @@ export const MovieList = () => {
 
   return (
     <div className={styles.movieListContainer}>
-      <label htmlFor="inputFilter">Filter</label>
-      <input
-        type="text"
-        className={styles.inputFilter}
-        onChange={handleFilterChange}
-        value={filterVal}
-        id="inputFilter"
-      />
-      <AiFillStar
-        onClick={handleFilterFavClick}
-        className={`${styles.filterFavIcon}`}
-      />
+      <div className={styles.filterContainer}>
+        <label htmlFor="inputFilter">Filter</label>
+        <input
+          type="text"
+          className={styles.inputFilter}
+          onChange={handleFilterChange}
+          value={filterVal}
+          id="inputFilter"
+        />
+        <AiFillStar
+          onClick={handleFilterFavClick}
+          className={`${styles.filterFavIcon}`}
+        />
+      </div>
       <div className={styles.gallery}>
         {isLoading ? (
           <ClipLoader

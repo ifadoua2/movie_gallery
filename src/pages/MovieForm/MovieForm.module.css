@@ -15,7 +15,6 @@
 }
 
 .contenedorImagen {
-    margin-right: 50px;
     padding: 0 20px;
     height: 60vh;
     
@@ -88,8 +87,15 @@
     cursor: pointer;
    
   }
-  @media (width<400px) {
+  @media (width<820px) {
     .MovieFormContainer{
         flex-wrap: wrap;
+        justify-content: center;
+
     }
+  }
+  @media (width<362px){.pageContainer {
+    padding-top: 30px;
+  }
+  
   }

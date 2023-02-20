@@ -12,7 +12,7 @@
   }
   
   .movieListContainer {
-    padding-top: 220px;
+    padding-top: 120px;
   }
   
   .inputFilter {
@@ -21,6 +21,8 @@
     border-radius: 10px;
     outline: none;
     border: 0px;
+    font-size: 26px;
+    background-color: beige;
   }
   
   .filterFavIconActive{
@@ -28,4 +30,22 @@
     font-size: 48px;
     color: #fdc408;
   }
+
+  .filterContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-top: 20px;
+    flex-wrap: wrap;
+  }
+  .filterContainer label {
+    font-size: 26px;
+    color: #0f1822;
+    font-weight: bold;
+  }
+  @media (width<362px){.movieListContainer {
+    padding-top: 153px;
+  }
   
+  }
