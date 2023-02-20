@@ -91,8 +91,8 @@ export const MovieList = () => {
 
   const deleteById = (id) => {
     movieApiService.deleteMovieById(id).then((data) => {
-      setMovies(movies.filter((movie) => movie.id != id));
-      setShowMovies([...movies]);
+      getMoviesState();
+      setFilterVal("");
       setIsToastDeleteOpen(true);
     });
   };
@@ -157,7 +157,7 @@ export const MovieList = () => {
               <MovieCard
                 movieProp={movie}
                 key={movie.id}
-                deleteById={deleteById}
+                openConfirmDialog={openConfirmDialog}
                 getMoviesState={getMoviesState}
               />
             ))}
