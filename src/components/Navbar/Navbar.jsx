@@ -12,11 +12,11 @@ export const Navbar = () => {
       <Link to={"/"} className={styles.nameWeb}>
         <h1>Movie Gallery</h1>
       </Link>
-      <div>
+    
         <Link to={"/form"}>
           <img className={styles.logoAdd} src={Addlogo} alt="logo add" />
         </Link>
-      </div>
+      
     </div>
   );
 };
