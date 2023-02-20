@@ -5,6 +5,7 @@
   grid-template-columns: repeat(auto-fill, 250px);
   justify-content: center;
   padding-top: 20px;
+
 }
 .clipLoader {
   justify-self: center;
@@ -40,4 +41,10 @@
   cursor: pointer;
   font-size: 48px;
   color: rgb(160, 160, 149);
+}
+
+@media (width<362px){.movieListContainer {
+  padding-top: 153px;
+}
+
 }
